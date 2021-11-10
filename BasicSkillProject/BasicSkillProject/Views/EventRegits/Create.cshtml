@@ -1,0 +1,76 @@
+﻿@model BasicSkillProject.Models.EventRegit
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EventRegit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EventId" class="control-label"></label>
+                <select asp-for="EventId" class ="form-control" asp-items="ViewBag.EventId"></select>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="SchoolYear" class="control-label"></label>
+                <input asp-for="SchoolYear" class="form-control" />
+                <span asp-validation-for="SchoolYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SchoolActivitie" class="control-label"></label>
+                <input asp-for="SchoolActivitie" class="form-control" />
+                <span asp-validation-for="SchoolActivitie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OwnAction" class="control-label"></label>
+                <input asp-for="OwnAction" class="form-control" />
+                <span asp-validation-for="OwnAction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PowerExerted" class="control-label"></label>
+                <input asp-for="PowerExerted" class="form-control" />
+                <span asp-validation-for="PowerExerted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DevelopedCapacity" class="control-label"></label>
+                <input asp-for="DevelopedCapacity" class="form-control" />
+                <span asp-validation-for="DevelopedCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhatWasThought" class="control-label"></label>
+                <input asp-for="WhatWasThought" class="form-control" />
+                <span asp-validation-for="WhatWasThought" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="CommentId" class="control-label"></label>
+                <input asp-for="CommentId" class="form-control" />
+                <span asp-validation-for="CommentId" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

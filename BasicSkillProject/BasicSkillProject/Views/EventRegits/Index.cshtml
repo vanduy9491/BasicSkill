@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BasicSkillProject.Models.EventRegit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>学年</th>
+            <th>イ ベ ン ト</th>
+            <th>ステータス</th>
+            <th>通知</th>
+            <th>アクション</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SchoolYear)
+                </td>
+                <td>
+                    <i class="@item.Event.Icons"></i>
+                    @Html.DisplayFor(modelItem => item.Event.EventName)
+                </td>
+                <td>
+                    @if (item.Status == 1)
+                    {
+                        <p class="btn btn-info">未確認</p>
+                    }
+                    else
+                    {
+                        @if (item.Status == 1)
+                        {
+                            <p class="btn btn-warning">確認中</p>
+                        }
+                        else
+                        {
+                            <p class="btn btn-success">修了</p>
+                        }
+
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
